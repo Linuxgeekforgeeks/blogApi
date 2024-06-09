@@ -1,8 +1,9 @@
 const express=require("express");
 const mongoose=require("mongoose");
 const postRouter= require("./routes/postRoutes");
+const userRouter= require("./routes/userRoutes");
 require("dotenv").config()
-const cors=require("cors")
+const cors=require("cors");
 
 
 const app=express()
@@ -20,6 +21,7 @@ try {
 }
 
 app.use("/api/",postRouter)
+app.use("/api/",userRouter)
 
 app.listen(port,()=>{
     console.log("Our server is running on the "+port)
